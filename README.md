@@ -1,41 +1,113 @@
-# [RO] Licenta/Disertatie 2024
+# Interactive Patient Data Analysis with NHANES
 
-Scopul acestui depozit este colectarea lucrariilor de licenta.
+This repository contains a Streamlit web application designed for the interactive exploration and analysis of health data. 
 
-Astfel in cadrul acestui depozit o sa găsiți următoarele directoare:
+## Data Source
 
-- `proiect`: Acest director trebuie sa contina codul sursă al aplicației voastre.
-- `lucrare`: Acest director trebuie sa contina lucrearea voastră în format PDF.
+The analyses presented here use data from the National Health and Nutrition Examination Survey (NHANES), a program by the U.S. Centers for Disease Control and Prevention (CDC). The cycle used is this one - [NHANES on Kaggle](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey/data). The required files need to be added in a "data" folder at the root of the project.
 
-Important:
+demographic.csv
 
-- **NU** este permisă adăugarea de `sub-repository`
-- Vă rugam ca in proiect să **NU** incărcați arhive ci **DOAR codul sursă**. Nerespectarea acestei instrucțiuni poate duce la ignorarea codului.
+diet.csv
 
-### Instructiuni
+examination.csv
 
-Pentru actualizarea continutului acestui repository va rugam facem o clona locala folosind `git` și faceți ulterior `push` modificărilor.
+labs.csv
 
-# [EN] BSc/MSc Thesis
+medications.csv
 
-The purpose of this repository is the collection of your graduation thesis.
+questionnaire.csv
 
-In this repository you will find the following directories:
+## Installation Guide
 
-- `proiect`: this directory MUST contain the source code of your application
-- `lucrare`: this directory MUST contain the thesis in PDF format
 
-Important:
+### 1. Prerequisites
 
-- You are **NOT ALLOWED** to use references to remote sub-repositories
-- Please **do not** upload archives, upload just the source code. Failure to comply to this instructiun might result in the comitee ignoring the application.
+* **Python 3.12**
+* **Git** 
+* **pip** 
 
-### Instructions
+### 2. Clone the Repository
 
-For updating the contents of this repository please clone locally the repository, add/update you data and push back the changes.
+Open your terminal or command prompt and clone this repository. This will include the source code.
 
-## References
+```bash
+git clone <your-repository-url>
+cd <repository-directory>
+```
 
-- https://git-scm.com/docs/gittutorial
-- https://docs.gitlab.com/ee/gitlab-basics/
-- https://www.sourcetreeapp.com/
+
+
+### 3. Set Up a Virtual Environment (Optional)
+
+It is recommended to create a virtual environment to avoid conflicts with other Python projects.
+
+* **On macOS/Linux:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+* **On Windows:**
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+
+### 4. Install Required Libraries
+
+This project uses several Python libraries.
+
+Create a file named `requirements.txt` in the root of your project directory and add the following lines:
+
+```
+streamlit
+pandas
+seaborn
+matplotlib
+scipy
+numpy
+statsmodels
+gower
+scikit-learn
+kmedoids
+shap
+xgboost
+```
+
+Install all the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+
+
+## 5. How to Run the Application
+
+The following directory structure is expected:
+```
+.
+├── data/
+│   ├── demographic.csv
+│   ├── diet.csv
+│   ├── examination.csv
+│   ├── labs.csv
+│   ├── medications.csv
+│   └── questionnaire.csv
+├── app.py
+├── clustering.py
+├── predictive.py
+├── requirements.txt
+└── README.md
+```
+
+Once you have completed the installation, you can run the Streamlit application.
+
+Ensure you are in the project's root directory and your virtual environment is activated. Then, execute the following command:
+
+```bash
+streamlit run app.py
+```
+
+The application should now open in a new tab in your default web browser.
